@@ -36,9 +36,9 @@
      const { id } = req.params; 
      const emepleadoEdit = {  
          name: req.body.name,
-         position: req.body.position,
-         office: req.body.office,
-         salary: req.body.salary
+         especialidad: req.body.especialidad,
+         especialista: req.body.especialista,
+         date: req.body.date
      };
      await Cita.findByIdAndUpdate(id, {$set: emepleadoEdit}, {new:  true}); 
      res.json({status: 'Cita Actualizada'});
