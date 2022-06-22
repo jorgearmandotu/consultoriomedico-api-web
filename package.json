@@ -1,0 +1,29 @@
+{
+  "name": "backend-consultorio-medico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgearmandotu/consultoriomedico-api-web.git"
+  },
+  "author": "Jorge Urbina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgearmandotu/consultoriomedico-api-web/issues"
+  },
+  "homepage": "https://github.com/jorgearmandotu/consultoriomedico-api-web#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
