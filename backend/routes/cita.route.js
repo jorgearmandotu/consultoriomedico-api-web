@@ -8,6 +8,7 @@ const router = express.Router();
 
 
 router.get('/', citaCtrl.getCitas);
+router.get('/citas:id', citaCtrl.getCitasPersona);
 router.post('/', citaCtrl.createCitas);
 router.get('/:id', citaCtrl.getUnicoCita);
 router.put('/:id', citaCtrl.editarCita);

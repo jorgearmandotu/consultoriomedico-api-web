@@ -13,7 +13,13 @@
  citaCtrl.getCitas = async (req, res) => {
      const citas = await Cita.find();
      res.json(citas);   
-}                    
+}             
+
+//obtner citas de una persona
+citaCtrl.getCitasPersona = async (req, res) => {
+    const citas = await Cita.find({'identification': req.params.identification});
+    res.json(citas);
+}
  
  // Crear citas
  
