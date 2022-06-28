@@ -11,13 +11,20 @@
  
  //Obtener todos loas citas
  citaCtrl.getCitas = async (req, res) => {
-     const citas = await Cita.find();
-     res.json(citas);   
+    try{
+        const citas = await Cita.find();
+        res.json(citas);   
+    }catch(error){
+        console.log(error);
+        res.status(500).json({
+            ok:false,
+            msg: 'error'
+        })
+    }
 }             
 
 //obtner citas de una persona
 citaCtrl.getCitasPersona = async (req, res) => {
-    
     try{
         let identificacion = req.params.identification;
         const citas = await Cita.find({ identification: identificacion});
@@ -26,7 +33,7 @@ citaCtrl.getCitasPersona = async (req, res) => {
         console.log(error);
         res.status(500).json({
             ok:false,
-            msg: 'contacte al administrador',
+            msg: 'error',
         });
     }
 }
@@ -34,11 +41,19 @@ citaCtrl.getCitasPersona = async (req, res) => {
  // Crear citas
  
  citaCtrl.createCitas = async (req, res) => { 
-    const cita = new Cita(req.body);
-    await cita.save();    
-    res.json({
-        'status': 'Cita guardada'
-    });
+    try{
+        const cita = new Cita(req.body);
+        await cita.save();    
+        res.json({
+            'status': 'Cita guardada'
+        });
+    }catch(error){
+        console.log(error);
+        res.status(500).json({
+            ok:false,
+            msg: 'error',
+        })
+    }
  }
 
  //Conseguir un única cita 
